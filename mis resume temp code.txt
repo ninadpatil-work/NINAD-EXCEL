@@ -1,0 +1,147 @@
+%-------------------------
+% Resume in Latex
+% Author: Ninad Patil
+%------------------------
+\documentclass[letterpaper,11pt]{article} % Restored to 11pt for better readability and page filling
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.75in} 
+\addtolength{\textheight}{1.45in} 
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Relaxed the section spacing to let the resume breathe
+\titleformat{\section}{
+\vspace{-8pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}} 
+\newcommand{\resumeSubheading}[4]{
+\vspace{-2pt}\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & \textbf{\small #2} \\
+\textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+\vspace{-2pt}\item
+\begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+\small#1 & \textbf{\small #2}\\
+\end{tabular*}\vspace{-5pt}
+}
+% Adjusted list separation for a natural layout
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, noitemsep, topsep=2pt]} 
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+{\Huge \scshape NINAD PATIL} \\ \vspace{4pt}
+\textbf{\Large \scshape Data Analyst} \\ \vspace{4pt}
+\small \faPhone\ +91-9067638022 ~
+\faEnvelope\ \underline{ninadpatilwork@gmail.com} ~
+\href{https://www.linkedin.com/in/ninad-patil-9817751b0}{\faLinkedin\ \underline{Ninad-Patil}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+Analytical Computer Engineering graduate skilled in SQL querying, database administration, Advanced Excel (VLOOKUP, Pivot Tables), and Power BI reporting. Demonstrated expertise in designing centralized databases, automating daily dispatch and performance trackers, and evaluating operational process metrics. Eager to leverage strong backend data management and analytical skills to drive efficiency as an MIS Executive.
+
+%-----------SKILLS-----------
+\section{Skills}
+\textbf{Programming \& Querying:} SQL (DDL, DML, Joins, Subqueries), PL/SQL \\
+\textbf{Data Visualization Tools:} Advanced MS Excel, Power BI \\
+\textbf{Database \& Core Technologies:} MySQL, Database Management Systems (DBMS), Git \& GitHub, Windows OS
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Executive - IDFC FIRST BANK Project}{May 2025 -- July 2026}
+{Digitide Solutions Pvt. Ltd. (Airoli)}{Tools Used: Excel, Salesforce, Oracle Web Application}
+\resumeItemListStart
+\resumeItem{\textbf{Executed end-to-end application workflows} and delivery of the product according to strict client operational guidelines and data compliance protocols.}
+\resumeItem{Analyzed customer financial profiles. Managed final financial settlement negotiations to ensure accurate data entry and mitigate transactional risk.}
+\resumeItem{Collaborated with Team Leaders and Quality Analysts through daily feedback loops to evaluate process metrics, improve performance quality, and maintain strict SLA compliance.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------INTERNSHIP-----------
+\section{Internship}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Station Support Associate}{September 2023 -- December 2023}
+{Amazon Ntex Logistic Pvt. Ltd. (On-Site Pen)}{}
+\resumeItemListStart
+\resumeItem{\textbf{Coordinated with 16 delivery partners to ensure smooth daily operations.} Supported faster item sorting and optimised partner routing workflows.}
+\resumeItem{Inducted and managed high-volume inventory using scanner devices and internal systems.}
+\resumeItem{Managed documentation, system entries, and issue reporting workflows.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Hotel Booking \& Customer Management System} $|$ \emph{HTML, CSS, JavaScript, SQL, MongoDB}}{Academic Project}
+\resumeItemListStart
+\resumeItem{Designed and implemented a hybrid database backend using SQL and MongoDB within VS Code to efficiently store structural hotel listings and unstructured customer data logs.}
+\resumeItem{Built secure admin-side data controls enabling authorized administrators to update hotel details, modify menus, and manage contact configurations while restricting customer access.}
+\resumeItem{Formulated responsive data collection pipelines to capture visitor inputs via structured forms, including names, phone numbers, and reservation preferences.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Company Growth \& Revenue Tracker} $|$ \emph{Excel, SQL, Power BI}}{Academic Project}
+\resumeItemListStart
+\resumeItem{Developed a centralized operational database to store and manage agent performance matrices, attendance records, and team productivity markers in a highly structured format.}
+\resumeItem{Built analytical computation tools and data-driven dashboards to monitor real-time company growth trajectories and isolated agent-wise conversion metrics.}
+\resumeItem{Utilized Advanced Excel to engineer performance and absenteeism calculators, translating raw workforce data into actionable operational insights.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------AWARDS-----------
+\section{Awards \& Certifications}
+\resumeItemListStart
+\resumeItem{\textbf{Google Data Analytics Certificate – upGrad (2025):} Completed 6 practical case studies involving SQL, data cleaning, dashboards, and presentations.}
+\resumeItem{\textbf{College Leadership \& Cultural Excellence:} Appointed as Sports Administrator for 2 consecutive academic years and won 1st place in the annual college cultural festival.}
+\resumeItemListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{B.E Computer Engineering}{Graduated: May 2026}
+{KGCE Karjat, University of Mumbai}{CGPA: 6.96 / 10}
+\resumeSubHeadingListEnd
+
+\end{document}

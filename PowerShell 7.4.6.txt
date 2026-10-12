@@ -1,0 +1,296 @@
+PowerShell 7.4.6
+
+   A new PowerShell stable release is available: v7.6.3
+   Upgrade now, or check out the release page at:
+     https://aka.ms/PowerShell-Release?tag=v7.6.3
+
+PS C:\Users\VASANT PATIL homeuse> mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.38 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database mysqlpractice;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| mysqlpractice      |
+| ninad              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use mysqlpractice;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> create table kgcecollege;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table kgcecollege(collegeid int primary key,student varchar(20),enrol_year int,loaction varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table kgcecollege(collegeid int primary key,student varchar(20),enrol_year int,loaction varchar(20));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> describe kgcecollege;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| collegeid  | int         | NO   | PRI | NULL    |       |
+| student    | varchar(20) | YES  |     | NULL    |       |
+| enrol_year | int         | YES  |     | NULL    |       |
+| loaction   | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create table kgcecollege(collegeid,student,enrol_year,loaction) values (1,ninad,2022,pen);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',student,enrol_year,loaction) values (1,ninad,2022,pen)' at line 1
+mysql> create table kgcecollege(collegeid,student,enrol_year,loaction) values(1,"ninad",2022,"pen");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',student,enrol_year,loaction) values(1,"ninad",2022,"pen")' at line 1
+mysql> create table kgcecollege(collegeid,student,enrol_year,loaction) values(1,"ninad",2022,"pen");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',student,enrol_year,loaction) values(1,"ninad",2022,"pen")' at line 1
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, location)
+    -> VALUES (1, 'ninad', 2022, 'pen');
+ERROR 1054 (42S22): Unknown column 'location' in 'field list'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, location) VALUES (1, 'ninad', 2022, 'pen');
+ERROR 1054 (42S22): Unknown column 'location' in 'field list'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction)
+    -> VALUES (1, 'ninad', 2022, 'pen');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> VALUES (1, 'nina', 2022, 'pene');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1, 'nina', 2022, 'pene')' at line 1
+mysql> VALUES (2, 'nina', 2022, 'pene');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(2, 'nina', 2022, 'pene')' at line 1
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction)
+    -> VALUES (1, 'ninad', 2022, 'pen');
+ERROR 1062 (23000): Duplicate entry '1' for key 'kgcecollege.PRIMARY'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction)
+    -> VALUES (1, 'ninad', 2022, 'pen');
+ERROR 1062 (23000): Duplicate entry '1' for key 'kgcecollege.PRIMARY'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (2, 'ninad', 2022, 'pen');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (3, 'ninad', 2022, 'pene');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (4, 'ninad', 2022, 'pene');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (4, 'ninad', 2022, 'aligh');
+ERROR 1062 (23000): Duplicate entry '4' for key 'kgcecollege.PRIMARY'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (5, 'ninad', 2022, 'aligh');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (5, 'ninad', 2022, 'alighgadh');
+ERROR 1062 (23000): Duplicate entry '5' for key 'kgcecollege.PRIMARY'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction) VALUES (6, 'ninad', 2022, 'alighgadh');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from student;
+ERROR 1146 (42S02): Table 'mysqlpractice.student' doesn't exist
+mysql> select * from kgcecollege;
++-----------+---------+------------+-----------+
+| collegeid | student | enrol_year | loaction  |
++-----------+---------+------------+-----------+
+|         1 | ninad   |       2022 | pen       |
+|         2 | ninad   |       2022 | pen       |
+|         3 | ninad   |       2022 | pene      |
+|         4 | ninad   |       2022 | pene      |
+|         5 | ninad   |       2022 | aligh     |
+|         6 | ninad   |       2022 | alighgadh |
++-----------+---------+------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> alter table kgcecollege rename column loaction to location;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from kgcecollege;
++-----------+---------+------------+-----------+
+| collegeid | student | enrol_year | location  |
++-----------+---------+------------+-----------+
+|         1 | ninad   |       2022 | pen       |
+|         2 | ninad   |       2022 | pen       |
+|         3 | ninad   |       2022 | pene      |
+|         4 | ninad   |       2022 | pene      |
+|         5 | ninad   |       2022 | aligh     |
+|         6 | ninad   |       2022 | alighgadh |
++-----------+---------+------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> alter table kgcecollege add int age;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int age' at line 1
+mysql> alter table kgcecollege add age int;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from kgcecollege;
++-----------+---------+------------+-----------+------+
+| collegeid | student | enrol_year | location  | age  |
++-----------+---------+------------+-----------+------+
+|         1 | ninad   |       2022 | pen       | NULL |
+|         2 | ninad   |       2022 | pen       | NULL |
+|         3 | ninad   |       2022 | pene      | NULL |
+|         4 | ninad   |       2022 | pene      | NULL |
+|         5 | ninad   |       2022 | aligh     | NULL |
+|         6 | ninad   |       2022 | alighgadh | NULL |
++-----------+---------+------------+-----------+------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction,age) VALUES (6, 'ninad', 2022, 'alighgadh');
+ERROR 1054 (42S22): Unknown column 'loaction' in 'field list'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction,age) VALUES (6, 'ninad', 2022, 'alighgadh',22);
+ERROR 1054 (42S22): Unknown column 'loaction' in 'field list'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction,age)^CALUES (6, 'ninad', 2022, 'alighgadh',22);
+mysql> UPDATE kgcecollege SET age = 20 WHERE collegeid = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE kgcecollege SET age = 20 WHERE enrol_year = 2022;
+Query OK, 5 rows affected (0.01 sec)
+Rows matched: 6  Changed: 5  Warnings: 0
+
+mysql> select * from kgcecollege;
++-----------+---------+------------+-----------+------+
+| collegeid | student | enrol_year | location  | age  |
++-----------+---------+------------+-----------+------+
+|         1 | ninad   |       2022 | pen       |   20 |
+|         2 | ninad   |       2022 | pen       |   20 |
+|         3 | ninad   |       2022 | pene      |   20 |
+|         4 | ninad   |       2022 | pene      |   20 |
+|         5 | ninad   |       2022 | aligh     |   20 |
+|         6 | ninad   |       2022 | alighgadh |   20 |
++-----------+---------+------------+-----------+------+
+6 rows in set (0.00 sec)
+
+mysql> UPDATE kgcecollege
+    -> SET student = 'Amit Patil', enrol_year = 2023, location = 'Pen', age = 21
+    -> WHERE collegeid = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE kgcecollege SET student = 'Akash', enrol_year = 2023, location = 'Pen', age = 21 WHERE collegeid = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE kgcecollege SET student = 'sneha', enrol_year = 2021, location = 'koper', age = 18 WHERE collegeid = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE kgcecollege SET student = 'neha', enrol_year = 2021, location = 'koper', age = 18 WHERE collegeid = 4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE kgcecollege SET student = 'ram', enrol_year = 2022, location = 'pen', age = 18 WHERE collegeid = 5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE kgcecollege SET student = 'smita', enrol_year = 2021, location = 'pen', age = 18 WHERE collegeid = 6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from kgcecollege;
++-----------+---------+------------+----------+------+
+| collegeid | student | enrol_year | location | age  |
++-----------+---------+------------+----------+------+
+|         1 | ninad   |       2022 | pen      |   20 |
+|         2 | Akash   |       2023 | Pen      |   21 |
+|         3 | sneha   |       2021 | koper    |   18 |
+|         4 | neha    |       2021 | koper    |   18 |
+|         5 | ram     |       2022 | pen      |   18 |
+|         6 | smita   |       2021 | pen      |   18 |
++-----------+---------+------------+----------+------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, loaction,age) VALUES (7, 'ninad', 2022, 'alighgadh',22);
+ERROR 1054 (42S22): Unknown column 'loaction' in 'field list'
+mysql> INSERT INTO kgcecollege (collegeid, student, enrol_year, location,age) VALUES (7, 'ninad', 2022, 'alighgadh',22);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from kgcecollege;
++-----------+---------+------------+-----------+------+
+| collegeid | student | enrol_year | location  | age  |
++-----------+---------+------------+-----------+------+
+|         1 | ninad   |       2022 | pen       |   20 |
+|         2 | Akash   |       2023 | Pen       |   21 |
+|         3 | sneha   |       2021 | koper     |   18 |
+|         4 | neha    |       2021 | koper     |   18 |
+|         5 | ram     |       2022 | pen       |   18 |
+|         6 | smita   |       2021 | pen       |   18 |
+|         7 | ninad   |       2022 | alighgadh |   22 |
++-----------+---------+------------+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql> create table nmims;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table nmims (id int, name varchar(20),mode varchar(10),joining varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table nmims(id int,name varchar(20),mode varchar(10),joining varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table nmims(id int,name varchar(20),mode varchar(10),joining varchar(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO kgcecollege (id,name,mode,joining) VALUES (1, 'ninad',on,jully);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on,jully)' at line 1
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (1, 'ninad',on,jully);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on,jully)' at line 1
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (1, 'ninad',"on","jully");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (2, 'ninad',"on","jully");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (3, 'ninad',"on","jully");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (4, 'ninad',"on","jully");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (5, 'ninad',"on","jully");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO nmims (id,name,mode,joining) VALUES (6, 'ninad',"on","jully");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from nmims;
++------+-------+------+---------+
+| id   | name  | mode | joining |
++------+-------+------+---------+
+|    1 | ninad | on   | jully   |
+|    2 | ninad | on   | jully   |
+|    3 | ninad | on   | jully   |
+|    4 | ninad | on   | jully   |
+|    5 | ninad | on   | jully   |
+|    6 | ninad | on   | jully   |
++------+-------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from kgcecollege;
++-----------+---------+------------+-----------+------+
+| collegeid | student | enrol_year | location  | age  |
++-----------+---------+------------+-----------+------+
+|         1 | ninad   |       2022 | pen       |   20 |
+|         2 | Akash   |       2023 | Pen       |   21 |
+|         3 | sneha   |       2021 | koper     |   18 |
+|         4 | neha    |       2021 | koper     |   18 |
+|         5 | ram     |       2022 | pen       |   18 |
+|         6 | smita   |       2021 | pen       |   18 |
+|         7 | ninad   |       2022 | alighgadh |   22 |
++-----------+---------+------------+-----------+------+
+7 rows in set (0.00 sec)
+
+mysql>
